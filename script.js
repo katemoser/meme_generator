@@ -14,15 +14,16 @@ function makeMeme(){
 
     //make top and botton text
     let textTop = document.createElement("div");
+    textTop.className = "top";
     textTop.innerText = document.getElementById("text-top").value;
     let textBottom = document.createElement("div");
+    textBottom.className = "bottom";
     textBottom.innerText = document.getElementById("text-bottom").value;
     
     
     //make a new div
     let div = document.createElement("div");
-    div.class = "meme"
-    div.position = "absolute"
+    div.className = "meme";
     //put the img in the div
     div.appendChild(img);
     div.appendChild(textTop);
