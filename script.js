@@ -1,12 +1,9 @@
 //Script for the meme generator
 
 
-function makeMeme(){
-    console.log("You clicked the button!");
-    //let memePic = document.getElementById("image-url").value;
-    //let textTop = document.getElementById("text-top").value;
-    //let textBottom = document.getElementById("text-bottom").value;
-
+function makeMeme(e){
+    //prevent pae from refreshing after submitting form
+    e.preventDefault();
     //make a new image?
     let img = document.createElement("img")
     img.src = document.getElementById("image-url").value;
@@ -20,7 +17,6 @@ function makeMeme(){
     textBottom.className = "bottom";
     textBottom.innerText = document.getElementById("text-bottom").value;
     
-    
     //make a new div
     let div = document.createElement("div");
     div.className = "meme";
@@ -28,9 +24,6 @@ function makeMeme(){
     div.appendChild(img);
     div.appendChild(textTop);
     div.appendChild(textBottom);
-
-    //div.className = "meme";
-    //div.innerText = textTop + " " + textBottom;
 
     //append to the div with ID memes
     const memes = document.querySelector("#memes")
@@ -41,5 +34,14 @@ function makeMeme(){
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("generateButton").addEventListener("click", makeMeme);
+    document.getElementById("generateButton").addEventListener("click", function(event){
+        makeMeme(event);
+    });
+});
+
+//add event listeners to class meme
+document.addEventListener("DOMContentLoaded", function(){
+    document.querySelector(".meme").addEventListener("click", function(event){
+        alert("you just clicked on " + event.target);
+    });
 });
