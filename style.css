@@ -16,8 +16,12 @@ body {
 }
 
 
-.meme:hover {
-    opacity: 0.5;
+.meme:hover img{
+    opacity: 0.7;
+}
+
+.meme:hover .remove{
+    opacity: .8;
 }
 
 .meme img{
@@ -36,4 +40,15 @@ body {
     bottom: 20px;
     left: 0;
     right:0;
+}
+
+.remove{
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    font-size: 4em;
+    color:rgb(28, 31, 31);
+    transform: translate(-50%, -50%);
+
 }

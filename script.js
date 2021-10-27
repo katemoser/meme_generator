@@ -16,22 +16,28 @@ function makeMeme(e){
     let textBottom = document.createElement("div");
     textBottom.className = "bottom";
     textBottom.innerText = document.getElementById("text-bottom").value;
-    
+    //make the remove X
+    let remove = document.createElement("div");
+    remove.className = "remove";
+    remove.innerText = "X"
+
     //make a new div
-    let div = document.createElement("div");
-    div.className = "meme";
+    let meme = document.createElement("div");
+    meme.className = "meme";
     //put the img in the div
-    div.appendChild(img);
-    div.appendChild(textTop);
-    div.appendChild(textBottom);
+    meme.appendChild(remove);
+    meme.appendChild(img);
+    meme.appendChild(textTop);
+    meme.appendChild(textBottom);
+    
 
     
     //append to the div with ID memes
     const memes = document.querySelector("#memes")
-    memes.appendChild(div);
+    memes.appendChild(meme);
 
     //also need to clear the form inputs when the button is clicked
-
+    document.getElementById("memeForm").reset();
 }
 
 document.addEventListener("DOMContentLoaded", function(){
