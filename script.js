@@ -2,7 +2,7 @@
 
 
 function makeMeme(e){
-    //prevent pae from refreshing after submitting form
+    //prevent page from refreshing after submitting form
     e.preventDefault();
     //make a new image?
     let img = document.createElement("img")
@@ -25,6 +25,7 @@ function makeMeme(e){
     div.appendChild(textTop);
     div.appendChild(textBottom);
 
+    
     //append to the div with ID memes
     const memes = document.querySelector("#memes")
     memes.appendChild(div);
@@ -36,12 +37,18 @@ function makeMeme(e){
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("generateButton").addEventListener("click", function(event){
         makeMeme(event);
+        //add event listener to new meme?
+        
     });
 });
 
-//add event listeners to class meme
+
+//add event listener to meme section
+//when you click on the image or text, it should remove the parent node
+//AKA the div with class meme, that contains the img and text
 document.addEventListener("DOMContentLoaded", function(){
-    document.querySelector(".meme").addEventListener("click", function(event){
-        alert("you just clicked on " + event.target);
-    });
+    const memeSection = document.querySelector("#memes");
+    memeSection.addEventListener("click", function(event){
+        event.target.parentNode.remove();
+    })
 });
