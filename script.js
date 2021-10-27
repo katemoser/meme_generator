@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", function(){
 document.addEventListener("DOMContentLoaded", function(){
     const memeSection = document.querySelector("#memes");
     memeSection.addEventListener("click", function(event){
-        event.target.parentNode.remove();
+        if(event.target.parentNode.className === "meme"){
+            event.target.parentNode.remove();
+        }
     })
 });
