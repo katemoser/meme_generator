@@ -12,9 +12,50 @@
 }
 
 body {
+    padding: 1em;
     font-family:Arial, Helvetica, sans-serif;
+    background-color: lightgray;
 }
 
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 5px;
+    border: 2px solid lightslategray;
+    padding: 10px;
+}
+
+
+button {
+    padding: 10px;
+    background-color:lightslategray;
+    border: 1px solid darkslategray;
+}
+
+#memeForm {
+    color:darkslategray;
+    padding: 1em;
+}
+
+#memeForm p{
+    width: 100%;
+}
+
+#form{
+    margin: 10px;
+}
+
+#form{
+    width: 50%;
+    background-color: whitesmoke;
+    padding: 1em;
+    box-shadow: 1px 2px 5px darkslategray;
+}
+
+#memes {
+    padding-top: 1em;
+}
 
 .meme:hover img{
     opacity: 0.7;
@@ -26,6 +67,8 @@ body {
 
 .meme img{
     width: 100%;
+    box-shadow: 1px 2px 5px darkslategray;
+
 }
 
 .top{
